@@ -20,7 +20,16 @@ class AuthAdmin
 
             return $next($request);
 
-        } else {
+        } elseif (session('utype') === 'EMP') {
+
+            return $next($request);
+
+        } elseif (session('utype') === 'USR') {
+
+            return $next($request);
+
+        }else{
+
             session()->flush();
             return redirect()->route('login');
         }

@@ -54,12 +54,12 @@
         <div class="row flex-grow">
             <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left p-5">
-                <div class="brand-logo">
-                <img src="../../assets/images/logo.svg">
+                <div class="brand-logo text-center">
+                <img src="../../assets/images/wal.png">
                 </div>
                 <h4>Hello! let's get started</h4>
                 <h6 class="font-weight-light">Sign in to continue.</h6>
-                <x-jet-validation-errors class="mb-4" />
+                <x-jet-validation-errors class="mb-4 text-danger" />
                 <form method="POST" action="{{route('login')}}" class="pt-3">
                     @csrf
                 <div class="form-group">
