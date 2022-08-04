@@ -23,7 +23,7 @@
                               </h4>
                               <i class="mdi  mdi-account-multiple mdi-24px float-right"></i>
                             </div>
-                            <h2>$ 15,0000</h2>
+                            <h4>$ 15,0000</h4>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                               </h4>
                               <i class="mdi mdi-account-switch mdi-24px float-right"></i>
                             </div>
-                            <h2>45,6334</h2>
+                            <h4>45,6334</h4>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                               </h4>
                               <i class="mdi mdi-android-studio mdi-24px float-right"></i>
                             </div>
-                            <h2>95,5741</h2>
+                            <h4>95,5741</h4>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                               </h4>
                               <i class="mdi mdi-book-minus mdi-24px float-right"></i>
                             </div>
-                            <h2>95,5741</h2>
+                            <h4>95,5741</h4>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                           </h4>
                           <i class="mdi mdi-alarm-check mdi-24px float-right"></i>
                         </div>
-                        <h2>$ 15,0000</h2>
+                        <h4>$ 15,0000</h4>
                     </div>
                 </div>
             </div>
@@ -90,7 +90,7 @@
                           </h4>
                           <i class="mdi mdi-alert-circle-outline mdi-24px float-right"></i>
                         </div>
-                        <h2>45,6334</h2>
+                        <h4>45,6334</h4>
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@
                           </h4>
                           <i class="mdi mdi-calendar-clock mdi-24px float-right"></i>
                         </div>
-                        <h2>95,5741</h2>
+                        <h4>95,5741</h4>
                     </div>
                 </div>
             </div>
@@ -115,7 +115,7 @@
                           <h4 class="font-weight-normal mb-3">Unresolved Tickets </h4>
                           <i class="mdi mdi-alert-outline mdi-24px float-right"></i>
                         </div>
-                        <h2>95,5741</h2>
+                        <h4>95,5741</h4>
                     </div>
                 </div>
             </div>

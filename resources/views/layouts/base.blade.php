@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" />
+
+    @livewireStyles
   </head>
   <body>
     @if (Route::has('login'))
@@ -207,6 +209,102 @@
                       </a>
                     </li>
                     <li class="nav-item">
+                      <a class="nav-link" href="pages/icons/mdi.html">
+                        <span class="menu-title">Leads</span>
+                        <i class="mdi mdi-account menu-icon"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="pages/icons/mdi.html">
+                        <span class="menu-title">Clients</span>
+                        <i class="mdi mdi-clipboard-account menu-icon"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-bs-toggle="collapse" href="#ui-hr" aria-expanded="false" aria-controls="ui-hr">
+                        <span class="menu-title">HR</span>
+                        <i class="menu-arrow"></i>
+                        <i class="mdi mdi-city menu-icon"></i>
+                      </a>
+                      <div class="collapse" id="ui-hr">
+                        <ul class="nav flex-column sub-menu">
+                          <li class="nav-item"> <a class="nav-link" href="{{route('show.employee')}}">Employee</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Leaves</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Shift Roster</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Attendance</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="{{route('admin.department')}}">Department</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-bs-toggle="collapse" href="#ui-work" aria-expanded="false" aria-controls="ui-work">
+                        <span class="menu-title">Work</span>
+                        <i class="menu-arrow"></i>
+                        <i class="mdi mdi-folder-multiple menu-icon"></i>
+                      </a>
+                      <div class="collapse" id="ui-work">
+                        <ul class="nav flex-column sub-menu">
+                          <li class="nav-item"> <a class="nav-link" href="{{route('role.permission')}}">Contracts</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Projects</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Tasks</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Time Logs</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-bs-toggle="collapse" href="#ui-finance" aria-expanded="false" aria-controls="ui-finance">
+                        <span class="menu-title">Finance</span>
+                        <i class="menu-arrow"></i>
+                        <i class="mdi mdi-square-inc-cash menu-icon"></i>
+                      </a>
+                      <div class="collapse" id="ui-finance">
+                        <ul class="nav flex-column sub-menu">
+                          <li class="nav-item"> <a class="nav-link" href="{{route('role.permission')}}">Proposal</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Estimates</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Invoices</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Payments</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Credit Note</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Expenses</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="pages/icons/mdi.html">
+                        <span class="menu-title">Products</span>
+                        <i class="mdi mdi-equal-box menu-icon"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="pages/icons/mdi.html">
+                        <span class="menu-title">Orders</span>
+                        <i class="mdi mdi-cart menu-icon"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="pages/icons/mdi.html">
+                        <span class="menu-title">Tickets</span>
+                        <i class="mdi mdi-headphones menu-icon"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="pages/icons/mdi.html">
+                        <span class="menu-title">Events</span>
+                        <i class="mdi mdi-calendar menu-icon"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="pages/icons/mdi.html">
+                        <span class="menu-title">Messages</span>
+                        <i class="mdi mdi-comment-multiple-outline menu-icon"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="pages/icons/mdi.html">
+                        <span class="menu-title">Notice Board</span>
+                        <i class="mdi mdi-content-paste menu-icon"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                         <span class="menu-title">Settings</span>
                         <i class="menu-arrow"></i>
@@ -218,63 +316,6 @@
                           <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Register</a></li>
                         </ul>
                       </div>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="pages/icons/mdi.html">
-                        <span class="menu-title">Icons</span>
-                        <i class="mdi mdi-contacts menu-icon"></i>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="pages/forms/basic_elements.html">
-                        <span class="menu-title">Forms</span>
-                        <i class="mdi mdi-format-list-bulleted menu-icon"></i>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="pages/charts/chartjs.html">
-                        <span class="menu-title">Charts</span>
-                        <i class="mdi mdi-chart-bar menu-icon"></i>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="pages/tables/basic-table.html">
-                        <span class="menu-title">Tables</span>
-                        <i class="mdi mdi-table-large menu-icon"></i>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-bs-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
-                        <span class="menu-title">Sample Pages</span>
-                        <i class="menu-arrow"></i>
-                        <i class="mdi mdi-medical-bag menu-icon"></i>
-                      </a>
-                      <div class="collapse" id="general-pages">
-                        <ul class="nav flex-column sub-menu">
-                          <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
-                          <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                          <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-                          <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                          <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="nav-item sidebar-actions">
-                      <span class="nav-link">
-                        <div class="border-bottom">
-                          <h6 class="font-weight-normal mb-3">Projects</h6>
-                        </div>
-                        <button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add a project</button>
-                        <div class="mt-4">
-                          <div class="border-bottom">
-                            <p class="text-secondary">Categories</p>
-                          </div>
-                          <ul class="gradient-bullet-list mt-4">
-                            <li>Free</li>
-                            <li>Pro</li>
-                          </ul>
-                        </div>
-                      </span>
                     </li>
                   </ul>
                 </nav>
@@ -902,5 +943,6 @@
     <script src="{{ asset('assets/js/dashboard.js') }}"></script>
     <script src="{{ asset('assets/js/todolist.js') }}"></script>
     <!-- End custom js for this page -->
+    @livewireScripts
   </body>
 </html>

@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\Admin\EmployeeComponent;
+use App\Http\Livewire\Admin\AddEmployeeComponent;
+use App\Http\Livewire\Admin\DepartmentComponent;
+use App\Http\Livewire\Admin\EditEmployeeComponent;
 use App\Http\Livewire\Customer\CustomerDashboardComponent;
 use App\Http\Livewire\Employee\EmployeeDashboardComponent;
 use App\Http\Livewire\Admin\RolePermissionComponent;
@@ -45,5 +49,10 @@ Route::middleware(['auth:sanctum','verified'])->group(function(){
 
 //admin
 Route::middleware(['auth:sanctum','verified','authadmin'])->group(function(){
-    Route::get('/', AdminDashboardComponent::class)->name('admin.dashboard');
+    Route::get('/', AdminDashboardComponent::class);
+    Route::get('/employee/show', EmployeeComponent::class)->name('show.employee');
+    Route::get('/employee/add', AddEmployeeComponent::class)->name('add.employee');
+    Route::get('/employee/edit/{employee_id}', EditEmployeeComponent::class)->name('edit.employee');
+
+    Route::get('/admin/department', DepartmentComponent::class)->name('admin.department');
 });
