@@ -23,7 +23,7 @@
                               </h4>
                               <i class="mdi  mdi-account-multiple mdi-24px float-right"></i>
                             </div>
-                            <h4>$ 15,0000</h4>
+                            <h4>{{$employeeCount->count()}}</h4>
                         </div>
                     </div>
                 </div>

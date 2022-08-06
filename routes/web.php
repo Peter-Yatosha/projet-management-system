@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Livewire\Admin\AddClientComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\EmployeeComponent;
 use App\Http\Livewire\Admin\AddEmployeeComponent;
+use App\Http\Livewire\Admin\ClientComponent;
 use App\Http\Livewire\Admin\DepartmentComponent;
+use App\Http\Livewire\Admin\EditClientComponent;
 use App\Http\Livewire\Admin\EditEmployeeComponent;
 use App\Http\Livewire\Customer\CustomerDashboardComponent;
 use App\Http\Livewire\Employee\EmployeeDashboardComponent;
@@ -52,7 +55,11 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function(){
     Route::get('/', AdminDashboardComponent::class);
     Route::get('/employee/show', EmployeeComponent::class)->name('show.employee');
     Route::get('/employee/add', AddEmployeeComponent::class)->name('add.employee');
-    Route::get('/employee/edit/{employee_id}', EditEmployeeComponent::class)->name('edit.employee');
+    Route::get('/employee/edit/{e_id}', EditEmployeeComponent::class)->name('edit.employee');
+
+    Route::get('/clients', ClientComponent::class)->name('show.client');
+    Route::get('/client/add', AddClientComponent::class)->name('add.client');
+    Route::get('/client/edit/{client_id}', EditClientComponent::class)->name('edit.client');
 
     Route::get('/admin/department', DepartmentComponent::class)->name('admin.department');
 });

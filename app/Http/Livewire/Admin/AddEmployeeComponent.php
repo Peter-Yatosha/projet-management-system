@@ -26,7 +26,7 @@ class AddEmployeeComponent extends Component
     public $role;
 
     public function mount(){
-        $this->status = 'active';
+        $this->status = $this->status;
         $this->user_id = $this->employee_id;
     }
 
@@ -79,7 +79,7 @@ class AddEmployeeComponent extends Component
     }
     public function render()
     {
-       $users = User::all();
+       $users = User::where('utype', 'EMP')->get();
        $departments = Department::all();
 
         return view('livewire.admin.add-employee-component', [

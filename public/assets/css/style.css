@@ -3743,9 +3743,9 @@ textarea.form-control-lg {
   border-radius: 0.3rem; }
 
 .form-check {
-  display: block;
+  display: inline-block;
   min-height: 1.5rem;
-  padding-left: 1.5em;
+  margin-left: 2rem;
   margin-bottom: 0.125rem; }
   .form-check .form-check-input {
     float: left;
@@ -13054,7 +13054,7 @@ code {
   margin-bottom: 10px;
   padding-left: 0; }
   .form-check .form-check-label {
-    display: block;
+    display: content;
     margin-left: 1.75rem;
     font-size: 0.875rem;
     line-height: 1.5; }

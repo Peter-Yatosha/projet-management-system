@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\Employee;
 use Livewire\Component;
 
 class AdminDashboardComponent extends Component
 {
     public function render()
     {
-        return view('livewire.admin.admin-dashboard-component')->layout('layouts.base');
+        $employeeCount = Employee::where('status', 'active')->get();
+        return view('livewire.admin.admin-dashboard-component', ['employeeCount' => $employeeCount])->layout('layouts.base');
     }
 }
