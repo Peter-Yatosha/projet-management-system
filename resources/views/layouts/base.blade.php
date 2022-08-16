@@ -8,6 +8,15 @@
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('assets/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.base.css') }}">
+    <link rel="stylesheet" href="daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    
+
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -229,7 +238,7 @@
                       <div class="collapse" id="ui-hr">
                         <ul class="nav flex-column sub-menu">
                           <li class="nav-item"> <a class="nav-link" href="{{route('show.employee')}}">Employee</a></li>
-                          <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Leaves</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="{{route('show.leaves')}}">Leaves</a></li>
                           <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Shift Roster</a></li>
                           <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Attendance</a></li>
                           <li class="nav-item"> <a class="nav-link" href="{{route('admin.department')}}">Department</a></li>
@@ -245,7 +254,7 @@
                       <div class="collapse" id="ui-work">
                         <ul class="nav flex-column sub-menu">
                           <li class="nav-item"> <a class="nav-link" href="{{route('role.permission')}}">Contracts</a></li>
-                          <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Projects</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="{{route('show.project')}}">Projects</a></li>
                           <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Tasks</a></li>
                           <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Time Logs</a></li>
                         </ul>
@@ -929,20 +938,49 @@
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-date-range-picker/0.21.1/jquery.daterangepicker.min.js" integrity="sha512-jM36zj/2doNDqDlSIJ+OAslGvZXkT+HrtMM+MMgVxCqax1AIm1XAfLuUFP7uMSavUxow+z/T2CRnSu7PDaYu2A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.5/umd/popper.min.js" integrity="sha512-8cU710tp3iH9RniUh6fq5zJsGnjLzOWLWdZqBMLtqaoZUA6AWIE34lwMB3ipUNiTBP5jEZKY95SfbNnQ8cCKvA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="{{ asset('assets/vendors/chart.js/Chart.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.cookie.js" type="text/javascript') }}"></script>
+    <script src="moment.min.js"></script>
+    <script src="daterangepicker.js"></script>
     <!-- End plugin js for this page -->
     <!-- inject:js -->
     <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
     <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
     <script src="{{ asset('assets/js/misc.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+    <script src='bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' type='text/javascript'></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="{{ asset('assets/js/dashboard.js') }}"></script>
     <script src="{{ asset('assets/js/todolist.js') }}"></script>
     <!-- End custom js for this page -->
+    <script>
+      $(function() {
+        $('input[name="datetimes"]').daterangepicker({
+          timePicker: true,
+          startDate: moment().startOf('hour'),
+          endDate: moment().startOf('hour').add(32, 'hour'),
+          locale: {
+            format: 'M/DD hh:mm A'
+          }
+        });
+      });
+  </script>
+    
+
     @livewireScripts
   </body>
 </html>

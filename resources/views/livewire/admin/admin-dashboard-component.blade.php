@@ -36,7 +36,7 @@
                               </h4>
                               <i class="mdi mdi-account-switch mdi-24px float-right"></i>
                             </div>
-                            <h4>45,6334</h4>
+                            <h4>{{$clientCount->count()}}</h4>
                         </div>
                     </div>
                 </div>

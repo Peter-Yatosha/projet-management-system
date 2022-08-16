@@ -28,7 +28,7 @@
                                 <td>#EMP-00{{$employee->employee_id}}</td>
                                 <td class="d-flex">
                                         <div class="nav-profile-image">
-                                            <img src="{{asset('assets/employee/employee')}}/{{$employee->image}}" alt="profile">
+                                            <img src="{{asset('assets/images/employee')}}/{{$employee->image}}" alt="profile">
                                         </div>
                                     <div class="m-3">
                                         {{$employee->name}}
@@ -55,6 +55,7 @@
                                         <i class="mdi mdi-delete-forever"></i>
                                         Delete
                                     </a>
+                                    
                                 </td>
                             </tr>
                         @endforeach

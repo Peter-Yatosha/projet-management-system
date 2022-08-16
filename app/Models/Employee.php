@@ -10,7 +10,11 @@ class Employee extends Model
     use HasFactory;
     protected $table = 'employees';
 
-    public function users(){
+    public function user(){
         return $this->belongsTo(User::class);
+     }
+
+     public function leaves(){
+        return $this->hasMany(Leave::class);
      }
 }

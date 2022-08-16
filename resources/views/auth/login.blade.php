@@ -57,7 +57,6 @@
                 <div class="brand-logo text-center">
                 <img src="../../assets/images/wal.png">
                 </div>
-                <h4>Hello! let's get started</h4>
                 <h6 class="font-weight-light">Sign in to continue.</h6>
                 <x-jet-validation-errors class="mb-4 text-danger" />
                 <form method="POST" action="{{route('login')}}" class="pt-3">
@@ -69,7 +68,7 @@
                     <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
                 </div>
                 <div class="mt-3">
-                    <button class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
+                    <button class="btn btn-block btn-gradient-primary btn-lg form-control font-weight-medium auth-form-btn">SIGN IN</button>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
                     <div class="form-check">

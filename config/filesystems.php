@@ -32,7 +32,7 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => public_path('assets/employee'),
+            'root' => public_path('assets/images'),
             'throw' => false,
         ],
 

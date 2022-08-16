@@ -14,7 +14,7 @@
                         <select name='employee_id' wire:model=employee_id class="form-control form-control-sm">
                             <option value="">Select</option>
                           @foreach ($users as $user)
-                            <option value="{{$user->id}}">{{$user->id}}</option>
+                            <option value="{{$user->id}}">#{{$user->name}}</option>
                           @endforeach
                         </select>
                         @error('employee_id')

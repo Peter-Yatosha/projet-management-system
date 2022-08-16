@@ -4,10 +4,16 @@ use App\Http\Livewire\Admin\AddClientComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\EmployeeComponent;
 use App\Http\Livewire\Admin\AddEmployeeComponent;
+use App\Http\Livewire\Admin\AddleaveComponent;
+use App\Http\Livewire\Admin\AddProjectCategoryComponent;
 use App\Http\Livewire\Admin\ClientComponent;
 use App\Http\Livewire\Admin\DepartmentComponent;
 use App\Http\Livewire\Admin\EditClientComponent;
 use App\Http\Livewire\Admin\EditEmployeeComponent;
+use App\Http\Livewire\Admin\EditLeaveComponent;
+use App\Http\Livewire\Admin\EditProjectCategoryComponent;
+use App\Http\Livewire\Admin\LeaveComponent;
+use App\Http\Livewire\Admin\ProjectCategoryComponent;
 use App\Http\Livewire\Customer\CustomerDashboardComponent;
 use App\Http\Livewire\Employee\EmployeeDashboardComponent;
 use App\Http\Livewire\Admin\RolePermissionComponent;
@@ -59,7 +65,15 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function(){
 
     Route::get('/clients', ClientComponent::class)->name('show.client');
     Route::get('/client/add', AddClientComponent::class)->name('add.client');
-    Route::get('/client/edit/{client_id}', EditClientComponent::class)->name('edit.client');
+    Route::get('/client/edit/{c_id}', EditClientComponent::class)->name('edit.client');
+
+    Route::get('/leaves', LeaveComponent::class)->name('show.leaves');
+    Route::get('/leave/add', AddleaveComponent::class)->name('add.leave');
+    Route::get('/leave/edit/{l_id}', EditLeaveComponent::class)->name('edit.leave');
 
     Route::get('/admin/department', DepartmentComponent::class)->name('admin.department');
+
+    Route::get('/project/categories', ProjectCategoryComponent::class)->name('show.category');
+    Route::get('/project/category/add', AddProjectCategoryComponent::class)->name('add.category');
+    Route::get('/project/categoty/edit/{cat_id}', EditProjectCategoryComponent::class)->name('edit.category');
 });
