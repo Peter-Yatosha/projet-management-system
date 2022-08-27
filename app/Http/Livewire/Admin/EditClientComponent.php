@@ -14,8 +14,6 @@ class EditClientComponent extends Component
 
     public $client_id;
     public $salutation;
-    public $name;
-    public $email;
     public $company;
     public $gander;
     public $mobile;
@@ -35,8 +33,6 @@ class EditClientComponent extends Component
         $client = Client::where('id', $c_id)->first();
          $this->client_id = $client->client_id;
          $this->salutation = $client->salutation;
-         $this->name = $client->name;
-         $this->email = $client->email;
          $this->company = $client->company;
          $this->gander = $client->gander;
          $this->mobile = $client->mobile;
@@ -56,10 +52,8 @@ class EditClientComponent extends Component
 
     public function updated($fields){
         $this->validateOnly($fields, [
-            'client_id' => 'required',
+
             'salutation' => 'required',
-            'name' => 'required',
-            'email' => 'required',
             'company' => 'required',
             'gander' => 'required',
             'mobile' => 'required',
@@ -74,10 +68,8 @@ class EditClientComponent extends Component
     public function updateClient(){
         
         $this->validate([
-            'client_id' => 'required',
+            
             'salutation' => 'required',
-            'name' => 'required',
-            'email' => 'required',
             'company' => 'required',
             'gander' => 'required',
             'mobile' => 'required',
@@ -89,11 +81,8 @@ class EditClientComponent extends Component
         ]);
 
         $client = Client::find($this->cl_id);
-        $client->client_id = $this->client_id;
         $client->user_id = $this->client_id;
         $client->salutation = $this->salutation;
-        $client->name = $this->name;
-        $client->email = $this->email;
         $client->company = $this->company;
         $client->gander = $this->gander;
         $client->mobile = $this->mobile;

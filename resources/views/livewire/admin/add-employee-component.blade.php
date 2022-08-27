@@ -6,40 +6,21 @@
         @endif
         <div class="card-title d-flex justify-content-between mb-5">
             <h4>Create Employee</h4>
-            <a href="{{route('show.employee')}}" class="btn btn-success btn-sm "><i class="mdi mdi-account"></i> All Employees</a>
+            <a href="{{route('show.employee')}}" class="btn btn-success btn-rounded btn-sm "><i class="mdi mdi-account-multiple"></i> All Employees</a>
         </div>
         <form class="form-horizontal row g-3" wire:submit.prevent='addEmployee' enctype="multipart/form-data">
                     <div class="form-group col-md-6">
-                        <label for="employee_id">Employee_ID</label>
+                        <label for="employee_id">Employee Name</label>
                         <select name='employee_id' wire:model=employee_id class="form-control form-control-sm">
                             <option value="">Select</option>
                           @foreach ($users as $user)
-                            <option value="{{$user->id}}">#{{$user->name}}</option>
+                            <option value="{{$user->id}}">{{$user->name}}</option>
                           @endforeach
                         </select>
                         @error('employee_id')
                         <p class="text-danger">{{$message}}</p>
                         @enderror
                     </div> 
-
-                    <div class="form-group col-md-6">
-                        <label for="name">Employee Name</label>
-                        
-                        <input type="text" name='name' wire:model='name' class="form-control form-control-sm"  placeholder="Name">
-
-                        @error('name')
-                            <p class="text-danger">{{$message}}</p>
-                        @enderror
-                    </div>
-              
-                    <div class="form-group col-md-4">
-                        <label for="email">Email address</label>
-                        <input type="email" name='email' wire:model='email' class="form-control form-control-sm"  placeholder="Email">
-
-                        @error('email')
-                            <p class="text-danger">{{$message}}</p>
-                        @enderror
-                    </div>
 
                     <div class="form-group col-md-4">
                         <label for="email">Mobile</label>
@@ -144,8 +125,8 @@
                         @enderror
                     </div>
             <div class=" form-group d-flex justify-content-between ">
-                <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
-                <a href="{{route('show.employee')}}" class="btn btn-gradient-danger">Cancel</a>
+                <button type="submit" class="btn btn-gradient-primary me-2"><i class="mdi mdi-content-save"></i> Save</button>
+                <a href="{{route('show.employee')}}" class="btn btn-gradient-danger"><i class="mdi mdi-close-circle-outline"></i> Cancel</a>
             </div>
         </form>
       </div>

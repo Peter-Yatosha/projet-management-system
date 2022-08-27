@@ -4,14 +4,15 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Employee;
 use App\Models\Leave;
+use App\Models\User;
 use Livewire\Component;
 
 class AddleaveComponent extends Component
 {
-    public $member;
     public $leave_type;
     public $status;
-    public $duration;
+    public $start_date;
+    public $end_date;
     public $reason;
     public $member_id;
 
@@ -22,10 +23,11 @@ class AddleaveComponent extends Component
 
     public function updated($fields){
         $this->validateOnly($fields, [
-             'member' => 'required',
+
              'leave_type' => 'required',
              'status' => 'required',
-             'duration' => 'required',
+             'start_date' => 'required',
+             'end_date' => 'required',
              'reason' => 'required',
         ]);
     }
@@ -33,19 +35,20 @@ class AddleaveComponent extends Component
     public function addLeave(){
 
         $this->validate([
-            'member' => 'required',
-             'leave_type' => 'required',
-             'status' => 'required',
-             'duration' => 'required',
-             'reason' => 'required',
+        
+            'leave_type' => 'required',
+            'status' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+            'reason' => 'required',
         ]);
 
         $leave = new Leave();
         $leave->employee_id = $this->member_id;
-        $leave->member = $this->member;
         $leave->leave_type = $this->leave_type;
         $leave->status = $this->status;
-        $leave->duration = $this->duration;
+        $leave->start_date = $this->start_date;
+        $leave->end_date = $this->end_date;
         $leave->reasons = $this->reason;
         $leave->save();
 
@@ -55,8 +58,8 @@ class AddleaveComponent extends Component
 
     public function render()
     {
-        $members = Employee::all();
+        $employees = Employee::all();
 
-        return view('livewire.admin.addleave-component', ['members' => $members])->layout('layouts.base');
+        return view('livewire.admin.addleave-component', ['employees' => $employees])->layout('layouts.base');
     }
 }

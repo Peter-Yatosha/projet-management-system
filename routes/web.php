@@ -6,17 +6,23 @@ use App\Http\Livewire\Admin\EmployeeComponent;
 use App\Http\Livewire\Admin\AddEmployeeComponent;
 use App\Http\Livewire\Admin\AddleaveComponent;
 use App\Http\Livewire\Admin\AddProjectCategoryComponent;
+use App\Http\Livewire\Admin\AddProjectComponent;
+use App\Http\Livewire\Admin\AddTaskComponent;
 use App\Http\Livewire\Admin\ClientComponent;
 use App\Http\Livewire\Admin\DepartmentComponent;
 use App\Http\Livewire\Admin\EditClientComponent;
 use App\Http\Livewire\Admin\EditEmployeeComponent;
 use App\Http\Livewire\Admin\EditLeaveComponent;
 use App\Http\Livewire\Admin\EditProjectCategoryComponent;
+use App\Http\Livewire\Admin\EditProjectComponent;
+use App\Http\Livewire\Admin\EditTaskComponent;
 use App\Http\Livewire\Admin\LeaveComponent;
 use App\Http\Livewire\Admin\ProjectCategoryComponent;
+use App\Http\Livewire\Admin\ProjectComponent;
 use App\Http\Livewire\Customer\CustomerDashboardComponent;
 use App\Http\Livewire\Employee\EmployeeDashboardComponent;
 use App\Http\Livewire\Admin\RolePermissionComponent;
+use App\Http\Livewire\Admin\TaskComponent;
 use App\Http\Livewire\HomeComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -76,4 +82,12 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function(){
     Route::get('/project/categories', ProjectCategoryComponent::class)->name('show.category');
     Route::get('/project/category/add', AddProjectCategoryComponent::class)->name('add.category');
     Route::get('/project/categoty/edit/{cat_id}', EditProjectCategoryComponent::class)->name('edit.category');
+
+    Route::get('/project', ProjectComponent::class)->name('show.project');
+    Route::get('/project/add', AddProjectComponent::class)->name('add.project');
+    Route::get('/project/edit/{pro_id}', EditProjectComponent::class)->name('edit.project');
+
+    Route::get('/tasks', TaskComponent::class)->name('show.task');
+    Route::get('/task/add', AddTaskComponent::class)->name('add.task');
+    Route::get('/task/edit/{t_id}', EditTaskComponent::class)->name('edit.task');
 });

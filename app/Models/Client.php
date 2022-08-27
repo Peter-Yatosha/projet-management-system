@@ -9,10 +9,13 @@ class Client extends Model
 {
     use HasFactory;
 
-    protected $table = 'clients';
-
-    public function users(){
+    
+    public function user(){
         
         return $this->belongsTo(User::class);
+    }
+
+    public function projects(){
+        return $this->hasMany(Projects::class);
     }
 }

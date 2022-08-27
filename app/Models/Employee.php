@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Employee extends Model
 {
     use HasFactory;
+
     protected $table = 'employees';
 
     public function user(){
@@ -16,5 +17,9 @@ class Employee extends Model
 
      public function leaves(){
         return $this->hasMany(Leave::class);
+     }
+
+     public function task(){
+      return $this->belongsToMany(Task::class);
      }
 }

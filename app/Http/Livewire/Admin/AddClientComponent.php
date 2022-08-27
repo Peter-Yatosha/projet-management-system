@@ -14,8 +14,6 @@ class AddClientComponent extends Component
 
     public $client_id;
     public $salutation;
-    public $name;
-    public $email;
     public $company;
     public $gander;
     public $mobile;
@@ -32,10 +30,8 @@ class AddClientComponent extends Component
 
     public function updated($fields){
         $this->validateOnly($fields, [
-            'client_id' => 'required',
+            
             'salutation' => 'required',
-            'name' => 'required',
-            'email' => 'required',
             'company' => 'required',
             'gander' => 'required',
             'mobile' => 'required',
@@ -50,10 +46,8 @@ class AddClientComponent extends Component
     public function addClient(){
         
         $this->validate([
-            'client_id' => 'required',
+            
             'salutation' => 'required',
-            'name' => 'required',
-            'email' => 'required',
             'company' => 'required',
             'gander' => 'required',
             'mobile' => 'required',
@@ -65,12 +59,9 @@ class AddClientComponent extends Component
         ]);
 
         $client = new Client();
-
-        $client->client_id = $this->client_id;
+        $client->name = $this->client_id;
         $client->user_id = $this->client_id;
         $client->salutation = $this->salutation;
-        $client->name = $this->name;
-        $client->email = $this->email;
         $client->company = $this->company;
         $client->gander = $this->gander;
         $client->mobile = $this->mobile;

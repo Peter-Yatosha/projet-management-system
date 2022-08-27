@@ -49,7 +49,7 @@
                               </h4>
                               <i class="mdi mdi-android-studio mdi-24px float-right"></i>
                             </div>
-                            <h4>95,5741</h4>
+                            <h4>{{$projectCount->count()}}</h4>
                         </div>
                     </div>
                 </div>

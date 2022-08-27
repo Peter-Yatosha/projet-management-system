@@ -1,6 +1,6 @@
 <div>
     <div class="add-emp d-flex justify-content-end mb-3">
-        <a href="{{route('add.leave')}}" class="btn btn-success btn-sm"><i class="mdi mdi-account-multiple-plus "></i> Create Leave<a>
+        <a href="{{route('add.leave')}}" class="btn btn-success btn-rounded btn-sm"><i class="mdi mdi-airplane-takeoff"></i> Create Leave<a>
     </div>
         <div class="card">
             <div class="card-body">
@@ -13,7 +13,8 @@
                             <th>Employee Name</th>
                             <th>Leave Type</th>
                             <th>Leave Status</th>
-                            <th>Leave Date</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -21,7 +22,12 @@
                             @foreach ($leaves as $leave)
                             <tr>
                                 <td class="d-flex">
-                                    {{$leave->member}}
+                                    <div class="nav-profile-image">
+                                        <img src="{{asset('assets/images/employee')}}/{{$leave->employee->image}}" alt="profile">
+                                    </div>
+                                    <div class="m-3">
+                                        {{$leave->employee->user->name}}
+                                    </div>
                                 </td>
                                 <td>
                                     @if ($leave->leave_type == 'casual')
@@ -39,7 +45,8 @@
                                         <div class="text-danger">{{$leave->status}}</div>
                                     @endif
                                 </td>
-                                <td>{{$leave->duration}}</td>
+                                <td>{{$leave->start_date}}</td>
+                                <td>{{$leave->end_date}}</td>
                                 <td class="d-flex">
                                     <a href="{{route('edit.leave', ['l_id' => $leave->id])}}" class="btn btn-gradient-primary btn-sm m-1">
                                         <i class="mdi mdi-border-color"></i>

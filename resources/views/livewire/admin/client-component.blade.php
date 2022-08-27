@@ -1,6 +1,6 @@
 <div>
     <div class="add-emp d-flex justify-content-end mb-3">
-        <a href="{{route('add.client')}}" class="btn btn-success btn-sm"><i class="mdi mdi-account-multiple-plus "></i> Create Client<a>
+        <a href="{{route('add.client')}}" class="btn btn-success btn-rounded btn-sm"><i class="mdi mdi-account-multiple-plus "></i> Create Client<a>
     </div>
         <div class="card">
             <div class="card-body">
@@ -24,16 +24,16 @@
                         @if ($clients->count() > 0)
                             @foreach ($clients as $client)
                             <tr>
-                                <td>#C-00{{$client->client_id}}</td>
+                                <td>#C-00{{$client->user->id}}</td>
                                 <td class="d-flex">
                                         <div class="nav-profile-image">
                                             <img src="{{asset('assets/images/client')}}/{{$client->image}}" alt="profile">
                                         </div>
                                     <div class="m-3">
-                                        {{$client->name}}
+                                        {{$client->user->name}}
                                     </div>
                                 </td>
-                                <td>{{$client->email}}</td>
+                                <td>{{$client->user->email}}</td>
                                 <td>{{$client->mobile}}</td>
                                 <td>{{$client->address}}</td>
                                 <td>{{$client->country}}</td>

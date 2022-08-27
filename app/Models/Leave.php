@@ -9,7 +9,7 @@ class Leave extends Model
 {
     use HasFactory;
 
-    protected $table = 'leaves';
+    protected $table = "leaves";
 
     public function employee(){
         return $this->belongsTo(Employee::class);

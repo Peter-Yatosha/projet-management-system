@@ -13,12 +13,9 @@ class EditEmployeeComponent extends Component
     use WithFileUploads;
 
     public $employee_id;
-    public $name;
-    public $email;
     public $mobile;
     public $address;
     public $gander;
-    public $user_id;
     public $country;
     public $newimage;
     public $image;
@@ -28,10 +25,7 @@ class EditEmployeeComponent extends Component
     
 
     public function mount($e_id){
-        $employee = Employee::where('employee_id',$e_id)->first();
-        $this->employee_id = $employee->employee_id;
-        $this->name = $employee->name;
-        $this->email = $employee->email;
+        $employee = Employee::where('id',$e_id)->first();
         $this->mobile = $employee->mobile;
         $this->address = $employee->address;
         $this->gander = $employee->gander;
@@ -45,9 +39,7 @@ class EditEmployeeComponent extends Component
 
     public function updated($fields){
         $this->validateOnly($fields, [
-            'employee_id' => 'required|numeric',
-            'name' => 'required',
-            'email' => 'required|email',
+            'employee_id' => 'required',
             'mobile' => 'required',
             'gander' => 'required',
             //'department' => 'required',
@@ -59,9 +51,7 @@ class EditEmployeeComponent extends Component
     public function updateEmployee()
     {
         $this->validate([
-            'employee_id' => 'required|numeric',
-            'name' => 'required',
-            'email' => 'required|email',
+            'employee_id' => 'required',
             'mobile' => 'required',
             'gander' => 'required',
            // 'department' => 'required',
@@ -71,9 +61,6 @@ class EditEmployeeComponent extends Component
 
         $employee = Employee::find($this->emp_id);
         $employee->user_id = $this->employee_id;
-        $employee->name = $this->name;
-        $employee->employee_id = $this->employee_id;
-        $employee->email = $this->email;
         $employee->mobile = $this->mobile;
         $employee->gander = $this->gander;
        // $employee->department = $this->department;

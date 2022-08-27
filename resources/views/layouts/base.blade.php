@@ -255,7 +255,7 @@
                         <ul class="nav flex-column sub-menu">
                           <li class="nav-item"> <a class="nav-link" href="{{route('role.permission')}}">Contracts</a></li>
                           <li class="nav-item"> <a class="nav-link" href="{{route('show.project')}}">Projects</a></li>
-                          <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Tasks</a></li>
+                          <li class="nav-item"> <a class="nav-link" href="{{route('show.task')}}">Tasks</a></li>
                           <li class="nav-item"> <a class="nav-link" href="{{route('register')}}">Time Logs</a></li>
                         </ul>
                       </div>
@@ -969,8 +969,8 @@
     <!-- End custom js for this page -->
     <script>
       $(function() {
-        $('input[name="datetimes"]').daterangepicker({
-          timePicker: true,
+        $('#datetimes').daterangepicker({
+          datePicker: true,
           startDate: moment().startOf('hour'),
           endDate: moment().startOf('hour').add(32, 'hour'),
           locale: {

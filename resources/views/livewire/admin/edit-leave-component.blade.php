@@ -6,16 +6,16 @@
             @endif
             <div class="d-flex justify-content-between mb-5">
                 <h4>Edit Leave</h4>
-                <a href="{{route('show.leaves')}}" class="btn btn-gradient-success"><i class="mdi mdi-account"></i> All Leaves</a>
+                <a href="{{route('show.leaves')}}" class="btn btn-gradient-success btn-rounded btn-sm"><i class="mdi mdi-airplane-takeoff"></i> All Leaves</a>
             </div>
             <form wire:submit.prevent="editLeave" class="row g-3">
                 <div class="form-group col-md-4">
-                    <label for="member">Choose Member ID</label>
+                    <label for="member">Choose Member Name</label>
                     <select wire:model="member_id" class="form-control form-control-sm">
                         <option value="">Select Menber</option>
-                        @forelse ($members as $member)
-                            <option value="{{$member->id}}">
-                                {{$member->id}}-{{$member->name}}
+                        @forelse ($employees as $employee)
+                            <option value="{{$employee->id}}">
+                                {{$employee->user->name}}
                             </option>
                         @empty
                             <option value="">No member found</option>
@@ -23,27 +23,6 @@
                     </select>
 
                     @error('member_id')
-                        <div class="text-danger">{{$message}}</div>
-                    @enderror
-                </div>
-
-                <div class="form-group col-md-4">
-                    <label for="member">Choose Member</label>
-                    <select wire:model="member" class="form-control form-control-sm">
-                        <option value="">Select Menber</option>
-                        @forelse ($members as $member)
-                            <option value="{{$member->name}}">
-                                {{$member->name}}
-                                <div class="nav-profile-image">
-                                    <img src="{{asset('assets/images/employee')}}/{{$member->image}}" alt="profile">
-                                </div>
-                            </option>
-                        @empty
-                            <option value="">No member found</option>
-                        @endforelse
-                    </select>
-
-                    @error('member')
                         <div class="text-danger">{{$message}}</div>
                     @enderror
                 </div>
@@ -75,12 +54,12 @@
                 </div>
                 <div class="form-group col-md-4">
                     <label for="duration">Start Date</label>
-                    <input type="date" wire:model="duration" id="datetimes" placeholder="start from..." class="form-control form-control-sm">
+                    <input type="date" wire:model="start_date" id="datetimes" placeholder="start from..." class="form-control form-control-sm">
                     
                 </div>
                 <div class="form-group col-md-4">
                     <label for="duration">End Date</label>
-                    <input type="date" wire:model="duration" id="datetimes" placeholder="ends to from..." class="form-control form-control-sm">
+                    <input type="date" wire:model="end_date" id="datetimes" placeholder="ends to from..." class="form-control form-control-sm">
 
                     @error('duration')
                         <div class="text-danger">{{$message}}</div>
@@ -97,7 +76,7 @@
                 </div>
                 <div class="form-group d-flex justify-content-between">
                     <button type="submit" class="btn btn-gradient-primary"><i class="mdi mdi-content-save"></i> Update</button>
-                    <a href="{{route('show.leaves')}}"  class="btn btn-gradient-danger">Cancel</a>
+                    <a href="{{route('show.leaves')}}"  class="btn btn-gradient-danger"><i class="mdi mdi-close-circle-outline"></i> Cancel</a>
                 </div>
             </form>
         </div>

@@ -14,12 +14,9 @@ class AddEmployeeComponent extends Component
     use WithFileUploads;
 
     public $employee_id;
-    public $name;
-    public $email;
     public $mobile;
     public $address;
     public $gander;
-    public $user_id;
     public $country;
     public $image;
     public $status;
@@ -27,14 +24,11 @@ class AddEmployeeComponent extends Component
 
     public function mount(){
         $this->status = $this->status;
-        $this->user_id = $this->employee_id;
     }
 
     public function updated($fields){
         $this->validateOnly($fields, [
-            'employee_id' => 'required|numeric',
-            'name' => 'required',
-            'email' => 'required|email',
+            'employee_id' => 'required',
             'mobile' => 'required',
             'gander' => 'required',
             //'department' => 'required',
@@ -47,9 +41,7 @@ class AddEmployeeComponent extends Component
     public function addEmployee()
     {
         $this->validate([
-            'employee_id' => 'required|numeric',
-            'name' => 'required',
-            'email' => 'required|email',
+            'employee_id' => 'required',
             'mobile' => 'required',
             'gander' => 'required',
            // 'department' => 'required',
@@ -60,9 +52,6 @@ class AddEmployeeComponent extends Component
 
         $employee = new Employee();
         $employee->user_id = $this->employee_id;
-        $employee->name = $this->name;
-        $employee->employee_id = $this->employee_id;
-        $employee->email = $this->email;
         $employee->mobile = $this->mobile;
         $employee->gander = $this->gander;
        // $employee->department = $this->department;

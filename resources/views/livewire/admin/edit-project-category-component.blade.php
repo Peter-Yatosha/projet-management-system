@@ -18,8 +18,11 @@
                             <button class="btn btn-gradient-success" type="submit">Update</button>
                           </span>
                         </div>
+                        @error('category')
+                            <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
                       </div>
-                      <a href="{{route('show.category')}}" class="btn btn-gradient-danger btn-sm btn-rounded"><i class=""></i> Cancel</a>
+                      <a href="{{route('show.category')}}" class="btn btn-gradient-danger btn-sm btn-rounded"><i class="mdi mdi-close-circle-outline"></i> Cancel</a>
                 </form>
             </div>
            </div>
