@@ -43,9 +43,6 @@
                                     </a>
                                 </td>
                             </tr>
-                            @foreach ($task->employee as $em)
-                               <div>{{ $em->mobile }}</div>
-                             @endforeach
                         @endforeach
                     </tbody>
                 </table>

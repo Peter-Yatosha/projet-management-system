@@ -278,7 +278,7 @@
                       </div>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="pages/icons/mdi.html">
+                      <a class="nav-link" href="{{ route('show.product') }}">
                         <span class="menu-title">Products</span>
                         <i class="mdi mdi-equal-box menu-icon"></i>
                       </a>

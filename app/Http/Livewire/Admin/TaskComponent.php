@@ -14,7 +14,7 @@ class TaskComponent extends Component
     }
     public function render()
     {
-        $tasks = Task::with('employee')->simplePaginate(5);
+        $tasks = Task::simplePaginate(5);
 
         return view('livewire.admin.task-component',[
             'tasks' => $tasks,

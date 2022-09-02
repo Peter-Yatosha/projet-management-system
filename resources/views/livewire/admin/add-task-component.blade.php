@@ -41,7 +41,7 @@
                     <select wire:model="assigned_to" class="form-control form-control-sm">
                         <option value="">Select</option>
                         @forelse ($employees as $employee)
-                            <option value="{{ $employee->id }}">{{ $employee->user->name }}</option>
+                            <option value="{{ $employee->user->id }}">{{ $employee->user->name }}</option>
                         @empty
                         <div class="text-danger">
                             <p>No list availabe</p>

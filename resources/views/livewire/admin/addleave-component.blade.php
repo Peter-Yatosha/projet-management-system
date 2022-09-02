@@ -10,8 +10,8 @@
                 </div>
             <form wire:submit.prevent="addLeave" class="row g-3">
                 <div class="form-group col-md-4">
-                    <label for="member">Choose Member Name</label>
-                    <select wire:model="member_id" class="form-control form-control-sm">
+                    <label>Choose Member Name</label>
+                    <select wire:model="employee_name" class="form-control form-control-sm">
                         <option value="">Select Menber</option>
                         @forelse ($employees as $employee)
                             <option value="{{$employee->id}}">

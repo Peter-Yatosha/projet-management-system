@@ -37,7 +37,7 @@
                                         <img src="{{asset('assets/images/client')}}/{{$project->client->image}}" alt="profile">
                                     </div>
                                     <div class="m-3">
-                                        {{$project->client->name}}
+                                        {{$project->client->user->name}}
                                     </div>
                                 </td>
                                 <td>{{$project->start_date}}</td>

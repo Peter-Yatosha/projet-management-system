@@ -22,11 +22,11 @@
                             @foreach ($leaves as $leave)
                             <tr>
                                 <td class="d-flex">
-                                    <div class="nav-profile-image">
+                                    {{--<div class="nav-profile-image">
                                         <img src="{{asset('assets/images/employee')}}/{{$leave->employee->image}}" alt="profile">
-                                    </div>
+                                    </div>--}}
                                     <div class="m-3">
-                                        {{$leave->employee->user->name}}
+                                        {{$leave->employee_name}}
                                     </div>
                                 </td>
                                 <td>

@@ -5,18 +5,24 @@ use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\EmployeeComponent;
 use App\Http\Livewire\Admin\AddEmployeeComponent;
 use App\Http\Livewire\Admin\AddleaveComponent;
+use App\Http\Livewire\Admin\AddOrderComponent;
+use App\Http\Livewire\Admin\AddProductComponent;
 use App\Http\Livewire\Admin\AddProjectCategoryComponent;
 use App\Http\Livewire\Admin\AddProjectComponent;
 use App\Http\Livewire\Admin\AddTaskComponent;
+use App\Http\Livewire\Admin\CartComponent;
 use App\Http\Livewire\Admin\ClientComponent;
 use App\Http\Livewire\Admin\DepartmentComponent;
 use App\Http\Livewire\Admin\EditClientComponent;
 use App\Http\Livewire\Admin\EditEmployeeComponent;
 use App\Http\Livewire\Admin\EditLeaveComponent;
+use App\Http\Livewire\Admin\EditProductComponent;
 use App\Http\Livewire\Admin\EditProjectCategoryComponent;
 use App\Http\Livewire\Admin\EditProjectComponent;
 use App\Http\Livewire\Admin\EditTaskComponent;
 use App\Http\Livewire\Admin\LeaveComponent;
+use App\Http\Livewire\Admin\ProductComponent;
+use App\Http\Livewire\Admin\ProductDetailsComponent;
 use App\Http\Livewire\Admin\ProjectCategoryComponent;
 use App\Http\Livewire\Admin\ProjectComponent;
 use App\Http\Livewire\Customer\CustomerDashboardComponent;
@@ -90,4 +96,11 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function(){
     Route::get('/tasks', TaskComponent::class)->name('show.task');
     Route::get('/task/add', AddTaskComponent::class)->name('add.task');
     Route::get('/task/edit/{t_id}', EditTaskComponent::class)->name('edit.task');
+
+    Route::get('/products', ProductComponent::class)->name('show.product');
+    Route::get('/product/add', AddProductComponent::class)->name('add.product');
+    Route::get('/product/edit/{p_id}', EditProductComponent::class)->name('edit.product');
+    Route::get('/product/details/{p_id}', ProductDetailsComponent::class)->name('product.details');
+
+    Route::get('/cart', CartComponent::class)->name('product.cart');
 });

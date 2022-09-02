@@ -14,7 +14,8 @@ class AddleaveComponent extends Component
     public $start_date;
     public $end_date;
     public $reason;
-    public $member_id;
+    public $employee_name;
+    public $assign;
 
     public function mount(){
         $this->status = $this->status;
@@ -23,7 +24,7 @@ class AddleaveComponent extends Component
 
     public function updated($fields){
         $this->validateOnly($fields, [
-
+            'employee_name' => 'required',
              'leave_type' => 'required',
              'status' => 'required',
              'start_date' => 'required',
@@ -35,7 +36,7 @@ class AddleaveComponent extends Component
     public function addLeave(){
 
         $this->validate([
-        
+            'employee_name' => 'required',
             'leave_type' => 'required',
             'status' => 'required',
             'start_date' => 'required',
@@ -44,13 +45,14 @@ class AddleaveComponent extends Component
         ]);
 
         $leave = new Leave();
-        $leave->employee_id = $this->member_id;
+        $leave->employee_name = $this->employee_name;
         $leave->leave_type = $this->leave_type;
         $leave->status = $this->status;
         $leave->start_date = $this->start_date;
         $leave->end_date = $this->end_date;
         $leave->reasons = $this->reason;
         $leave->save();
+        $leave->employee()->attach($this->employee_name);
 
         session()->flash('success_message', 'Leave has been created successfuly!');
     }

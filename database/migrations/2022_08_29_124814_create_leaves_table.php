@@ -15,14 +15,13 @@ return new class extends Migration
     {
         Schema::create('leaves', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('employee_id');
+            $table->string('employee_name');
             $table->string('leave_type');
             $table->enum('status', ['approved', 'pending'])->default('pending');
             $table->string('start_date');
             $table->string('end_date');
             $table->string('reasons');   
             $table->timestamps();
-            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
         });
     }
 
